@@ -607,3 +607,8 @@
 		firmware-name = "qcom/sm6125/xiaomi/laurel/a610_zap.mbn";
 	};
 };
+
+&remoteproc_mpss {
+	firmware-name = "qcom/sm6125/xiaomi/laurel/modem.mbn";
+	status = "okay";
+};

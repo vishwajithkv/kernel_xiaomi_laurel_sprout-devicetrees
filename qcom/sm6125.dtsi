@@ -9,6 +9,7 @@
 #include <dt-bindings/clock/qcom,rpmcc.h>
 #include <dt-bindings/clock/qcom,sm6125-gpucc.h>
 #include <dt-bindings/dma/qcom-gpi.h>
+#include <dt-bindings/firmware/qcom,scm.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/power/qcom-rpmpd.h>
@@ -384,6 +385,15 @@
 		adsp_mem: memory@f3400000 {
 			reg = <0x0 0xf3400000 0x0 0x800000>;
 			no-map;
+		};
+
+		rmtfs_mem: memory@fca01000 {
+			compatible = "qcom,rmtfs-mem";
+			reg = <0x0 0xfca01000 0x0 0x200000>;
+			no-map;
+
+			qcom,client-id = <1>;
+			qcom,vmid = <QCOM_SCM_VMID_MSS_MSA>;
 		};
 
 		qseecom_ta_mem: memory@13fc00000 {

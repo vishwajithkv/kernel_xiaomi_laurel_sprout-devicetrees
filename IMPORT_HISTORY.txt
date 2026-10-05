@@ -1,0 +1,14 @@
+Extraction baseline: kernel mainline-6.18 at 5b501da414fdc6bc2ef8e37f7178396ae67b490e
+Original commit mapping: companion kernel Documentation/android/patch-provenance.json
+Source licenses/copyrights and imported commit authors/dates are retained.
+
+635996884a1f0d687e37ab437b5a5524894dda17 vishwajithkv <vishwajithkv@users.noreply.github.com> arm64: sm6125: Configure Mi A3 Android 6.18 framebuffer bringup
+d495afdb4a1b546a823c77d7cffd6ea9603fdf89 SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Enable GPU
+20dba7f9a813d369e2f5339e7dfc30aaded1b53c SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125: Add GPU
+d174dacdbc580197a97c3860fc8ce32b73605894 SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125: Add GPU clock controller
+08dd048c395b9b84cced8ac94e1e94ced104d7ff SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Enable MDSS and add panel
+af0adeb16e1e2a87179559cabea6dddaca0fd46a SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Add RTC and enable it
+dfa6171fd676656866027a1f696c8bd813a3eafc SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Correct reserved memory regions
+0f42982bd9f7d7d0877a3013d460e6513446dbca SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Add USB OTG support and pmi632 type-c node
+1d46ad0379aa1f5b81fb30ead7f8090bcaf09174 SzczurekYT <szczurek@szczurek.yt> arm64: dts: qcom: sm6125-xiaomi-laurel-sprout: Add Focaltech FT3518 touchscreen
+03a4f6d63c551334ea07e45b38caaaa306d2ac5a vishwajithkv <vishwajithkv@users.noreply.github.com> Import ACK baseline for Mi A3 devicetrees

@@ -36,9 +36,9 @@
 	status = "disabled";
 };
 
-/* Touch and removable storage are not required for the first ADB boot. */
+/* FT3518 touch: enable only its QUP wrapper, I2C engine, DMA and supply. */
 &gpi_dma0 {
-	status = "disabled";
+	status = "okay";
 };
 
 &gpi_dma1 {
@@ -46,7 +46,7 @@
 };
 
 &i2c2 {
-	status = "disabled";
+	status = "okay";
 };
 
 &pm6125_rtc {
@@ -54,7 +54,7 @@
 };
 
 &qupv3_id_0 {
-	status = "disabled";
+	status = "okay";
 };
 
 &sdhc_1 {
@@ -66,5 +66,5 @@
 };
 
 &ts_vdd_supply {
-	status = "disabled";
+	status = "okay";
 };

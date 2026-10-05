@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/* Reuse attributed Mi A3 wiring and the verified boot-critical profile. */
+#include "sm6125-xiaomi-laurel-sprout-bringup.dts"
+
+&adreno_smmu {
+	status = "okay";
+};
+
+&dispcc {
+	status = "okay";
+};
+
+&gmu_wrapper {
+	status = "okay";
+};
+
+&gpu {
+	status = "okay";
+};
+
+&gpucc {
+	status = "okay";
+};
+
+&mdss {
+	status = "okay";
+};
+
+&mdss_dsi0 {
+	status = "okay";
+};
+
+&mdss_dsi0_phy {
+	status = "okay";
+};

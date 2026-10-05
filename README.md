@@ -37,3 +37,11 @@ Modem source integration now carries the five attributed laurel-connectivity
 patches. This is unvalidated kernel support with manual firmware startup;
 Android telephony and the RMTFS userspace service remain pending. See the
 companion kernel Documentation/android/MODEM.md and modem-provenance.json.
+
+Native graphics source profile: qcom/sm6125-xiaomi-laurel-sprout-native.dts
+includes the existing bringup DTS and re-enables its attributed GPU, SMMU,
+clock and MDSS/DSI nodes. Memory reservations and imported panel wiring/timing
+are preserved. The ROM selects this DTB with its native graphics profile.
+This profile is not built or device validated; see the kernel
+Documentation/android/NATIVE_GRAPHICS.md for firmware, panel-module packaging
+and the explicit SimpleDRM fallback.

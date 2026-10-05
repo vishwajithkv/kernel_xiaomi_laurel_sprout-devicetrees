@@ -32,3 +32,8 @@ built or device validated; see kernel Documentation/android/TOUCH_DISPLAY.md.
 built the split sources and confirmed recovery touch and physical Android
 display transition; live ADB confirmed both CPU frequency policies and boot
 completion. Sideload completes but its performance remains under investigation.
+
+Modem source integration now carries the five attributed laurel-connectivity
+patches. This is unvalidated kernel support with manual firmware startup;
+Android telephony and the RMTFS userspace service remain pending. See the
+companion kernel Documentation/android/MODEM.md and modem-provenance.json.

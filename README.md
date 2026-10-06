@@ -1,5 +1,25 @@
 # Mi A3 6.18 kernel device trees
 
+The native Mi A3 profile now omits the MDSS core reset consumer as a
+board-specific boot workaround. On 2026-10-06, DTB-only isolation with build
+#15 showed MDSS-parent-only recovery failing with the reset request and
+booting without it. Full native recovery also boots without the request;
+ADB confirms bound MDSS/DPU/DSI/PHY drivers, a connected DSI connector and
+renderD128. Android boot and repeated reboot stability with this workaround
+are pending. Source changes have not been compiled; the maintainer tested
+repacked images using the existing kernel and ramdisk.
+
+Subsequent build #16 includes this workaround: full ROM sideload succeeds,
+Android on B completes boot with Freedreno FD610 and physical display, and
+the maintainer confirms an Android reboot survives. Recovery remains alive
+but black; panel command initialization still times out early in both boot
+paths. See NATIVE_GRAPHICS.md for the separate, uncompiled DSI controller
+startup candidate. The reset bypass alone does not fix panel startup.
+
+The shared SM6125 reset description and provider remain intact, including
+their original authorship. The statements below describe earlier validation;
+the native profile override supersedes reset consumption for this board.
+
 The MDSS core reset wiring now carries upstream Mi A3 fix bb4d28e377cf by
 Val Packett, retaining authorship and review/test trailers. The companion
 kernel must also contain the matching DISPCC reset provider and ID binding.

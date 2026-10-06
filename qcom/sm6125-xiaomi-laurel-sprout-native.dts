@@ -23,6 +23,13 @@
 };
 
 &mdss {
+	/*
+	 * The optional core reset request hangs this board during MDSS probe.
+	 * Build #15 boots full native recovery when only this request is
+	 * omitted. Keep the provider in SM6125; investigate reset sequencing
+	 * before restoring the consumer. See NATIVE_GRAPHICS.md.
+	 */
+	/delete-property/ resets;
 	status = "okay";
 };
 

@@ -1,5 +1,18 @@
 # Mi A3 6.18 kernel device trees
 
+The MDSS core reset wiring now carries upstream Mi A3 fix bb4d28e377cf by
+Val Packett, retaining authorship and review/test trailers. The companion
+kernel must also contain the matching DISPCC reset provider and ID binding.
+Rebuild kernel and DTB together. The maintainer's 2026-10-06 build #15
+validated native physical scanout with the companion kernel corrections.
+The upstream Tested-by trailer is distinct from this local validation.
+
+The SM6125 DSI PHY now exposes its downstream-verified lane-clamp register
+resource to the companion kernel. Build #15 combines this resource with the
+MDSS reset and prepared-PLL restart corrections and has working physical
+display output. Rebuild kernel and DTB together. See the companion
+kernel Documentation/android/NATIVE_GRAPHICS.md for provenance and evidence.
+
 This repository owns the SM6125, PM6125, PMI632 and Mi A3 board descriptions
 used by the split kernel. `qcom/` contains the complete local DTS include
 closure. Binding headers come from the matching ACK kernel.
@@ -42,6 +55,7 @@ Native graphics source profile: qcom/sm6125-xiaomi-laurel-sprout-native.dts
 includes the existing bringup DTS and re-enables its attributed GPU, SMMU,
 clock and MDSS/DSI nodes. Memory reservations and imported panel wiring/timing
 are preserved. The ROM selects this DTB with its native graphics profile.
-This profile is not built or device validated; see the kernel
+The 2026-10-06 native build boots Android with physical scanout and live
+DEVICE composition confirmed during Settings scrolling; see the kernel
 Documentation/android/NATIVE_GRAPHICS.md for firmware, panel-module packaging
 and the explicit SimpleDRM fallback.

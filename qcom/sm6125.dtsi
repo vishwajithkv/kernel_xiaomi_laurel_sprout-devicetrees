@@ -1580,10 +1580,12 @@
 				compatible = "qcom,sm6125-dsi-phy-14nm";
 				reg = <0x05e94400 0x100>,
 				      <0x05e94500 0x300>,
-				      <0x05e94800 0x188>;
+				      <0x05e94800 0x188>,
+				      <0x05e01400 0x100>;
 				reg-names = "dsi_phy",
 					    "dsi_phy_lane",
-					    "dsi_pll";
+					    "dsi_pll",
+					    "dsi_phy_clamp";
 
 				#clock-cells = <1>;
 				#phy-cells = <0>;

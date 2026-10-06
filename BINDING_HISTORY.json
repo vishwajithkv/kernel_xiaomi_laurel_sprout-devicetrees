@@ -1,0 +1,106 @@
+{
+  "source_repository": "https://github.com/vishwajithkv/laurel_sprout_mainline",
+  "source_commit": "48d26734782a9423d0e1420b95e43148c6cfa238",
+  "ack_base": "926a323dc2667901ddcf1d5b024b82eb00aa89cc",
+  "note": "Unmodified extraction. Original authored commits remain in kernel history; this file records the carried revisions without reattributing them to the extractor.",
+  "files": [
+    {
+      "source_path": "Documentation/devicetree/bindings/clock/qcom,dispcc-sm6125.yaml",
+      "destination_path": "bindings/clock/qcom,dispcc-sm6125.yaml",
+      "sha256": "e012130ef118f11f6309b8588799a415b6bec7ce00886670c81fc4f4c4cf997a",
+      "carried_history": [
+        {
+          "commit": "c0748f3c9b7a81e68c89fed08f089c6ec5371ab2",
+          "author": "Biswapriyo Nath",
+          "email": "nathbappai@gmail.com",
+          "author_date": "2026-03-30T10:13:49+00:00",
+          "subject": "dt-bindings: clock: qcom,sm6125-dispcc: reference qcom,gcc.yaml"
+        }
+      ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/cpufreq/cpufreq-qcom-hw.yaml",
+      "destination_path": "bindings/cpufreq/cpufreq-qcom-hw.yaml",
+      "sha256": "a13aac33025519d059c577d47baa237115badddde353efa1c88212085bb54920",
+      "carried_history": [
+        {
+          "commit": "7c265c560a26b680f2f22e689972530e768fe5c9",
+          "author": "vishwajithkv",
+          "email": "vishwajithkv@users.noreply.github.com",
+          "author_date": "2026-10-05T20:39:41+05:30",
+          "subject": "cpufreq: qcom: Support SM6125 reduced OSM frequency LUT"
+        }
+      ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/display/msm/dsi-phy-14nm.yaml",
+      "destination_path": "bindings/display/msm/dsi-phy-14nm.yaml",
+      "sha256": "8e34f325c96273a18ec92f999d08dd0f6f06acb1e2ed808c4307b7308da1fcc9",
+      "carried_history": [
+        {
+          "commit": "11e11e6b5154f2462e7507665596c612dab6d9a0",
+          "author": "vishwajithkv",
+          "email": "vishwajithkv@users.noreply.github.com",
+          "author_date": "2026-10-06T19:53:31+05:30",
+          "subject": "drm/msm/dsi: restore SM6125 PLL and sequence panel before video"
+        }
+      ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/display/panel/samsung,s6e8fco.yaml",
+      "destination_path": "bindings/display/panel/samsung,s6e8fco.yaml",
+      "sha256": "9480c512e6ff3f8ddb5dcad698e3031e99d164204e3f4aca3a20b2c2fd3b1a4a",
+      "carried_history": [
+        {
+          "commit": "530851307ac241642b048e7d1b1f256512631961",
+          "author": "SzczurekYT",
+          "email": "szczurek@szczurek.yt",
+          "author_date": "2025-07-25T10:52:31+02:00",
+          "subject": "dt-bindings: display: panel: Add Samsung S6E8FCO"
+        }
+      ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml",
+      "destination_path": "bindings/input/touchscreen/edt-ft5x06.yaml",
+      "sha256": "10214c0b5d1f6c8c5a01752aacc2ee35c0f1811983b6de9c5a519259f8a55a81",
+      "carried_history": [
+        {
+          "commit": "f4ce287c72ca6d91919f84722e772dd1244d82a7",
+          "author": "SzczurekYT",
+          "email": "szczurek@szczurek.yt",
+          "author_date": "2025-06-02T10:48:23+02:00",
+          "subject": "dt-bindings: input: touchscreen: edt-ft5x06: Document FT3518 support"
+        }
+      ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/remoteproc/qcom,sm6115-pas.yaml",
+      "destination_path": "bindings/remoteproc/qcom,sm6115-pas.yaml",
+      "sha256": "bb7d2a20fd8e05665d5e9a8bfa6720672c2469f6143caf3dfaabae3e1df5c29a",
+      "carried_history": [
+        {
+          "commit": "0cd7ee11773228af1bffaf263f806a8ba5dc04d7",
+          "author": "vishwajithkv",
+          "email": "vishwajithkv@users.noreply.github.com",
+          "author_date": "2026-10-05T20:51:41+05:30",
+          "subject": "laurel: Integrate attributed SM6125 PAS modem bringup"
+        }
+      ]
+    },
+    {
+      "source_path": "include/dt-bindings/clock/qcom,dispcc-sm6125.h",
+      "destination_path": "include/dt-bindings/clock/qcom,dispcc-sm6125.h",
+      "sha256": "b96510560eda7e612872f579add72704ec678768488903fc97021c2da2ce78f6",
+      "carried_history": [
+        {
+          "commit": "6992ee105c2e4a34dc8b2032b7efb0bbfe39e2f8",
+          "author": "Val Packett",
+          "email": "val@packett.cool",
+          "author_date": "2026-03-03T00:41:21-03:00",
+          "subject": "dt-bindings: clock: qcom,dispcc-sm6125: Define MDSS resets"
+        }
+      ]
+    }
+  ]
+}

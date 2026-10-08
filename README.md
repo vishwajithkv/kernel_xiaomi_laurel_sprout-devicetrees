@@ -107,6 +107,15 @@ flash was performed for this refactor.
 
 ## Wi-Fi candidate
 
+2026-10-08 CE mapping fix: the WLAN `reg` value is now
+`<0x0c800000 0x800000>`. Its `/soc@0` parent uses one address cell and one
+size cell. The previous four-cell encoding made the first resource start at
+physical zero, sending CE0 SRRI reads to 0x00240044 instead of 0x0ca40044.
+The existing native DTB was inspected and confirms the malformed encoding.
+Rebuild the DTB together with the kernel's Laurel resource guard before
+full-mode verification. No build, test, flash or Wi-Fi association validation
+has been performed for this correction.
+
 WCN3990 board wiring belongs to the devicetrees repo; upstream ath10k and
 its vendor modules belong to the ACK kernel, not a duplicate external driver.
 Android firmware links and services belong to the ROM tree. See the companion

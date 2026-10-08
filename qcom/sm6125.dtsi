@@ -1742,7 +1742,7 @@
 		/* CE IRQs and SID from Laurel's downstream Trinket ICNSS node. */
 		wifi: wifi@c800000 {
 			compatible = "qcom,wcn3990-wifi";
-			reg = <0x0 0x0c800000 0x0 0x800000>;
+			reg = <0x0c800000 0x800000>;
 			reg-names = "membase";
 			memory-region = <&wlan_msa_mem>;
 			interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>,

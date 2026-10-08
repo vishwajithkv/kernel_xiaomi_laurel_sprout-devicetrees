@@ -328,6 +328,7 @@
 		};
 
 		wlan_msa_mem: memory@53300000 {
+			/* Stock ICNSS uses the full fixed-region resource size. */
 			reg = <0x0 0x53300000 0x0 0x200000>;
 			no-map;
 		};
@@ -1736,6 +1737,29 @@
 
 			#global-interrupts = <1>;
 			#iommu-cells = <2>;
+		};
+
+		/* CE IRQs and SID from Laurel's downstream Trinket ICNSS node. */
+		wifi: wifi@c800000 {
+			compatible = "qcom,wcn3990-wifi";
+			reg = <0x0 0x0c800000 0x0 0x800000>;
+			reg-names = "membase";
+			memory-region = <&wlan_msa_mem>;
+			interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 359 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 360 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 362 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 363 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 364 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 365 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 366 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 367 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 368 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 369 IRQ_TYPE_LEVEL_HIGH>;
+			iommus = <&apps_smmu 0x80 0x1>;
+			/* HL.3 firmware requires ath10k's SCM MSA assignment. */
+			status = "disabled";
 		};
 
 		apcs_glb: mailbox@f111000 {

@@ -191,6 +191,33 @@
 		regulator-boot-on;
 	};
 
+	/* Stock Trinket: IO=L9, XTAL=L16, RF=L17, PA=L23; one RF chain.
+	 * The provider sequences IO before other rails. Optional clock/SWCTRL
+	 * wiring is omitted until established for this board.
+	 */
+	wcn3990-pmu {
+		compatible = "qcom,wcn3990-pmu";
+		vddio-supply = <&vreg_l9a>;
+		vddxo-supply = <&vreg_l16a>;
+		vddrf-supply = <&vreg_l17a>;
+		vddch0-supply = <&vreg_l23a>;
+
+		regulators {
+			wcn_pmu_io: ldo0 {
+				regulator-name = "wcn-pmu-io";
+			};
+			wcn_pmu_xo: ldo1 {
+				regulator-name = "wcn-pmu-xo";
+			};
+			wcn_pmu_rf: ldo2 {
+				regulator-name = "wcn-pmu-rf";
+			};
+			wcn_pmu_ch0: ldo3 {
+				regulator-name = "wcn-pmu-ch0";
+			};
+		};
+	};
+
 };
 
 &hsusb_phy1 {
@@ -343,8 +370,9 @@
 		};
 
 		vreg_l8a: l8 {
-			regulator-min-microvolt = <400000>;
-			regulator-max-microvolt = <728000>;
+			/* Stock Trinket ICNSS CX/MX operating voltage. */
+			regulator-min-microvolt = <640000>;
+			regulator-max-microvolt = <640000>;
 		};
 
 		vreg_l9a: l9 {
@@ -390,7 +418,8 @@
 		};
 
 		vreg_l17a: l17 {
-			regulator-min-microvolt = <1248000>;
+			/* Stock ICNSS votes 1.304 V; ath10k only enables this rail. */
+			regulator-min-microvolt = <1304000>;
 			regulator-max-microvolt = <1304000>;
 		};
 
@@ -609,6 +638,15 @@
 };
 
 &remoteproc_mpss {
-	firmware-name = "qcom/sm6125/xiaomi/laurel/modem.mbn";
+	firmware-name = "qcom/sm6125/xiaomi/laurel/modem.mdt";
+	status = "okay";
+};
+
+/* CX is an SoC supply; PMU phandles identify the shared WCN sequencer. */
+&wifi {
+	vdd-0.8-cx-mx-supply = <&vreg_l8a>;
+	vdd-1.8-xo-supply = <&wcn_pmu_xo>;
+	vdd-1.3-rfa-supply = <&wcn_pmu_rf>;
+	vdd-3.3-ch0-supply = <&wcn_pmu_ch0>;
 	status = "okay";
 };

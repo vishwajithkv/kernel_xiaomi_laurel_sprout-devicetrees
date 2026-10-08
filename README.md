@@ -104,3 +104,24 @@ This layout refactor preserves source bytes, configuration and boot packaging.
 It requires a maintainer rebuild of matching kernel, DTB and modules; earlier
 native-display validation applies to the pre-refactor build. No build, test or
 flash was performed for this refactor.
+
+## Wi-Fi candidate
+
+WCN3990 board wiring belongs to the devicetrees repo; upstream ath10k and
+its vendor modules belong to the ACK kernel, not a duplicate external driver.
+Android firmware links and services belong to the ROM tree. See the companion
+kernel `Documentation/android/WIFI.md` for provenance, integration and pending
+2.4/5 GHz validation. This candidate is uncompiled and not device validated.
+
+2026-10-08: live regulator_summary showed WLAN L17 at 1.248 V. Stock
+Laurel/Trinket ICNSS explicitly votes 1.304 V for vdd-1.3-rfa, whereas ath10k
+only enables its supplies. The board now fixes L17's minimum and maximum to
+1.304 V. This corrects a stock power mismatch; resolving the CE MMIO stall
+still requires a maintainer rebuild and device logs.
+
+2026-10-08 sequencing candidate: Laurel now describes a WCN3990 PMU with
+IO/L9, XO/L16, RF/L17 and CH0/L23. The carried PMU binding is owned here and
+linked from ACK; its upstream authored commit remains in kernel history.
+CX/L8 stays on ath10k, and the unsupported duplicate L23 CH1 vote is removed.
+The new candidate is unbuilt/unvalidated; see the companion kernel's
+Documentation/android/WIFI_IMPLEMENTATION_20261008.md.

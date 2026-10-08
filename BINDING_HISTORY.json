@@ -101,6 +101,21 @@
           "subject": "dt-bindings: clock: qcom,dispcc-sm6125: Define MDSS resets"
         }
       ]
+    },
+    {
+      "source_path": "Documentation/devicetree/bindings/regulator/qcom,wcn3990-pmu.yaml",
+      "destination_path": "bindings/regulator/qcom,wcn3990-pmu.yaml",
+      "sha256": "7b3de0a40089f28992664760446733c45195bea7bad28648df0c7a86e2e82661",
+      "carried_history": [
+        {
+          "commit": "a5fae429ec2ac72372bc874a0334a7fb9eadee83",
+          "carried_commit": "6810e8a2a889",
+          "author": "Dmitry Baryshkov",
+          "email": "dmitry.baryshkov@oss.qualcomm.com",
+          "author_date": "2026-01-06T03:01:11+02:00",
+          "subject": "regulator: dt-bindings: qcom,wcn3990-pmu: describe PMUs on WCN39xx"
+        }
+      ]
     }
   ]
 }
